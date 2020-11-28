@@ -1,5 +1,5 @@
 <?php 
-  session_start();
+
 
   include('app_header.php');
 
@@ -33,7 +33,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php if($_SESSION['user_role'] == 'super_Admin'): ?>
+                                <?php if($_SESSION['user_role'] == 'super_admin'): ?>
                                 <div class="page-title-actions">
                                     
                                     <div class="d-inline-block dropdown">
@@ -58,7 +58,7 @@
               <th>#</th>
               <th>PACKHOUSE NAME</th>
               <th>LOCATION</th>
-              <?php if($_SESSION['user_role'] == 'super_Admin'): ?>
+              <?php if($_SESSION['user_role'] == 'super_admin'): ?>
               <th>UPDATE</th>
               <th>DELETE</th>
               <?php endif; ?>
@@ -71,7 +71,7 @@
                 <td><?php echo ++$i; ?></td>
                 <td><?php echo $house->packhouse_name; ?></td>
                 <td><?php echo $house->location; ?></td>
-                <?php if($_SESSION['user_role'] == 'super_Admin'): ?>
+                <?php if($_SESSION['user_role'] == 'super_admin'): ?>
                 <td><a href="#"><button class="btn btn-success">Update</button></a></td>
                 <td><a href="#"><button class="btn btn-danger">Delete</button></a></td>
                <?php endif; ?>

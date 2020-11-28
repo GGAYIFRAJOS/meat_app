@@ -47,7 +47,7 @@
               <th>CERTIFICATE TYPE</th>
               <th>REASON</th>
               <th>INSTITUTION</th>
-              <?php if($_SESSION['user_role'] == 'super_Admin'): ?>
+              <?php if($_SESSION['user_role'] == 'super_admin'): ?>
               <th>UPDATE</th>
               <th>DELETE</th>
               <?php endif; ?>
@@ -62,7 +62,7 @@
               <td><?php echo $certificate->certificate_type; ?></td>
               <td><?php echo $certificate->reason; ?></td>
               <td><?php echo $certificate->issuer; ?></td>
-              <?php if($_SESSION['user_role'] == 'super_Admin'): ?>
+              <?php if($_SESSION['user_role'] == 'super_admin'): ?>
               <td><a href="#"><button class="btn btn-success">Update</button></a></td>
               <td><a href="#"><button class="btn btn-danger">Delete</button></a></td>
               <?php endif; ?>

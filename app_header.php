@@ -643,7 +643,7 @@ session_start();
                                 </ul>
                                 </li>
                                
-                                <?php if($_SESSION['user_role'] == 'super_Admin'): ?>
+                                <?php if($_SESSION['user_role'] == 'super_admin'): ?>
                                    <li class="app-sidebar__heading">Account</li>
                                     <li>
                                         <a href="#">

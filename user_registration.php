@@ -51,7 +51,7 @@ if ($conn->query($sql)) {
 
 	
 
-  	header("Location: users_list.php");
+  	header("Location: index.php");
 
 	exit();
 } else {

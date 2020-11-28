@@ -47,7 +47,7 @@
               <th>LOAN AMOUNT</th>
               <th>REASON</th>
               <th>PREFFERED BANK</th>
-              <?php if($_SESSION['user_role'] == 'super_Admin'): ?>
+              <?php if($_SESSION['user_role'] == 'super_admin'): ?>
               <th>UPDATE</th>
               <th>DELETE</th>
               <?php endif; ?>
@@ -62,7 +62,7 @@
               <td><?php echo $loan->loan_amount; ?></td>
               <td><?php echo $loan->reason; ?></td>
               <td><?php echo $loan->preffered_bank; ?></td>
-              <?php if($_SESSION['user_role'] == 'super_Admin'): ?>
+              <?php if($_SESSION['user_role'] == 'super_admin'): ?>
               <td><a href="#"><button class="btn btn-success">Update</button></a></td>
               <td><a href="#"><button class="btn btn-danger">Delete</button></a></td>
               <?php endif; ?>

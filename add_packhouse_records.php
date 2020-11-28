@@ -20,14 +20,6 @@
             $records[] = $record;
   }
 
-  $sql = "SELECT * FROM packhouses";
-
-  $stmt = $conn->query($sql);
-
-  $houses = array();
-  while ($house = $stmt->fetchObject()) {
-            $houses[] = $house;
-  }
 
    include('app_header3.php');
 ?>
@@ -64,19 +56,6 @@
             <select name="container_code" class="form-control" id="container">
             <?php foreach($records as $record): ?>
                 <option value="<?php echo $record->container_code; ?>"><?php echo $record->container_code; ?></option>
-            <?php endforeach; ?>
-            </select>
-          
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="position-relative form-group">
-      
-            <label for="container">Packhouse</label>
-            <select name="packhouse_id" class="form-control" id="container">
-            <?php foreach($houses as $house): ?>
-                <option value="<?php echo $house->id; ?>"><?php echo $house->packhouse_name; ?></option>
             <?php endforeach; ?>
             </select>
           

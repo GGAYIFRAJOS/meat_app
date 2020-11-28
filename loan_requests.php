@@ -62,7 +62,7 @@
               <?php if($_SESSION['user_role'] == 'support_officer'): ?>
               <th>PROCESS</th>
               <?php endif; ?>
-              <?php if($_SESSION['user_role'] == 'super_Admin'): ?>
+              <?php if($_SESSION['user_role'] == 'super_admin'): ?>
               <th>UPDATE</th>
               <th>DELETE</th>
               <?php endif; ?>
@@ -80,7 +80,7 @@
               <?php if($_SESSION['user_role'] == 'support_officer'): ?>
               <td><a href="#"><button class="btn btn-primary">Process</button></a></td>
               <?php endif; ?>
-              <?php if($_SESSION['user_role'] == 'super_Admin'): ?>
+              <?php if($_SESSION['user_role'] == 'super_admin'): ?>
               <td><a href="#"><button class="btn btn-success">Update</button></a></td>
               <td><a href="#"><button class="btn btn-danger">Delete</button></a></td>
               <?php endif; ?>

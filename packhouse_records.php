@@ -5,14 +5,14 @@
 
    include('connection.php');
 
-  // $sql = "SELECT * FROM users WHERE user_role = 'doctor'";
+  $sql = "SELECT * FROM packhouse_records";
 
-  // $stmt = $conn->query($sql);
+  $stmt = $conn->query($sql);
 
-  // $doctors = array();
-  // while ($doctor = $stmt->fetchObject()) {
-  //           $doctors[] = $doctor;
-  // }
+  $packhouse_records = array();
+  while ($packhouse_record = $stmt->fetchObject()) {
+            $packhouse_records[] = $packhouse_record;
+  }
 
 
  ?>   
@@ -33,7 +33,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php if($_SESSION['user_role'] == 'super_Admin'): ?>
+                                <?php if($_SESSION['user_role'] == 'super_admin'): ?>
                                 <div class="page-title-actions">
                                     
                                     <div class="d-inline-block dropdown">
@@ -56,41 +56,39 @@
           <thead>
           <tr>
               <th>#</th>
-              <th>PARAM 1</th>
+              <th>DATE ARRIVED</th>
               
-              <th>PARAM 2</th>
-              <th>PARAM 3</th>
+              <th>EXPORT DATE</th>
+              <th>CONTAINER</th>
+              <th>WEIGHT</th>
+              <th>QRCODE</th>
               <?php if($_SESSION['user_role'] == 'super_admin'): ?>
                 <th>UPDATE</th>
                 <th>DELETE</th>
               <?php endif; ?>
           </tr>
           </thead>
+          <?php $i = 0; ?>
           <tbody>
+          <?php foreach($packhouse_records as $record): ?>
           
           <tr>
-              <td>1</td>
-              <td>data 1</td>
-              <td>data 2</td>
-              <td>data 3</td>
+              
+              <td><a href="qr_profile.php?id=<?php echo $record->id; ?>"><?php echo ++$i; ?></a></td>
+              <td><a href="qr_profile.php?id=<?php echo $record->id; ?>"><?php echo $record->export_date; ?></a></td>
+              <td><a href="qr_profile.php?id=<?php echo $record->id; ?>"><?php echo $record->date_arrived; ?></a></td>
+              <td><a href="qr_profile.php?id=<?php echo $record->id; ?>"><?php echo $record->container; ?></a></td>
+              <td><a href="qr_profile.php?id=<?php echo $record->id; ?>"><?php echo $record->weight; ?></a></td>
+              <td><a href="qr_profile.php?id=<?php echo $record->id; ?>"><img src="<?php echo $record->qr_code; ?>"></td>
               <?php if($_SESSION['user_role'] == 'super_admin'): ?>
                 <td><a href="#"><button class="btn btn-success">Update</button></a></td>
                 <td><a href="#"><button class="btn btn-danger">Delete</button></a></td>
               <?php endif; ?>
+
           </tr>
-          <tr>
-              <td>2</td>
-              <td>data 4</td>
-              <td>data 5</td>
-              <td>data 6</td>
-              <?php if($_SESSION['user_role'] == 'super_admin'): ?>
-                <td><a href="#"><button class="btn btn-success">Update</button></a></td>
-                <td><a href="#"><button class="btn btn-danger">Delete</button></a></td>
-              <?php endif; ?>
-          </tr>
-       
-        
-        
+          
+          <?php endforeach; ?>
+         
           </tbody>
          
       </table>
